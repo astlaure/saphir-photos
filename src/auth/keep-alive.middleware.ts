@@ -5,6 +5,6 @@ const keepAlive = (req: Request, res: Response, next: NextFunction) => {
     req.session.nowInMinutes = Math.floor(Date.now() / 60e3);
   }
   next();
-}
+};
 
 export default keepAlive;

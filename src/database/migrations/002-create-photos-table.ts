@@ -25,10 +25,10 @@ export default {
       },
       updatedAt: {
         type: DataTypes.DATE,
-      }
-    })
+      },
+    });
   },
   down: async (query: QueryInterface) => {
     await query.dropTable('photos');
   },
-}
+};

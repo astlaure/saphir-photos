@@ -20,6 +20,6 @@ const RememberMeStrategy = new Strategy({}, async (token, done) => {
   } catch (err) {
     return done(err);
   }
-})
+});
 
 export default RememberMeStrategy;

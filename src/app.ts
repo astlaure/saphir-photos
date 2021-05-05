@@ -2,7 +2,6 @@ import express from 'express';
 import { json, urlencoded } from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cookieSession from 'cookie-session';
-import hbs from 'hbs';
 import csurf from 'csurf';
 import security from './auth';
 import photoRouter from './photos/photo.router';

@@ -15,6 +15,6 @@ const LocalStrategy = new Strategy({
   } catch (err) {
     return done(err);
   }
-})
+});
 
 export default LocalStrategy;

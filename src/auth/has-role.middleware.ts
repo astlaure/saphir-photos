@@ -9,7 +9,7 @@ const hasRole = (role: string) => {
       return next();
     }
     return res.redirect(APP_URL!);
-  }
-}
+  };
+};
 
 export default hasRole;

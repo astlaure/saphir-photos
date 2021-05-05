@@ -7,6 +7,6 @@ const auth = (req: Request, res: Response, next: NextFunction) => {
     return res.redirect(`${APP_URL}/login`);
   }
   return next();
-}
+};
 
 export default auth;

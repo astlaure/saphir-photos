@@ -8,6 +8,6 @@ coreRouter.get('/', (req, res) => {
     return res.redirect(`${APP_URL}/photos`);
   }
   return res.redirect(`${APP_URL}/login`);
-})
+});
 
 export default coreRouter;

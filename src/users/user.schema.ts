@@ -30,4 +30,4 @@ const UserCreateSchema = Joi.object<User>({
 
 export default {
   UserCreate: UserCreateSchema,
-}
+};

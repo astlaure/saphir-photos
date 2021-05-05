@@ -12,10 +12,10 @@ export default {
         username: INITIAL_USER,
         password: await BcryptUtil.hash(INITIAL_PASSWORD!),
         role: 'admin',
-      }
-    ])
+      },
+    ]);
   },
   down: async (query: QueryInterface) => {
     await query.bulkDelete('users', {});
   },
-}
+};

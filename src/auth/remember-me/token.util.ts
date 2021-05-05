@@ -17,6 +17,6 @@ const TokenUtil = {
     await User.update({ token }, { where: { id: user.id } });
     return token;
   },
-}
+};
 
 export default TokenUtil;

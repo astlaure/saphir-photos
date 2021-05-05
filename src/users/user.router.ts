@@ -15,34 +15,34 @@ userRouter.get('/admin/users', auth, hasRole('admin'), async (req, res) => {
     users: await User.findAll(),
   };
   return res.render('users/admin/users', context);
-})
+});
 
 userRouter.get('/admin/users/create', auth, hasRole('admin'), (req, res) => {
   const context = {};
   return res.render('users/admin/create', context);
-})
+});
 
 userRouter.get('/admin/users/update/:id', auth, hasRole('admin'), async (req, res) => {
   const context = {
     user: await User.findByPk(req.params.id),
   };
   return res.render('users/admin/update', context);
-})
+});
 
 userRouter.post('/admin/users/create', auth, hasRole('admin'), async (req, res) => {
   try {
     const values = await Validator(UserSchemas.UserCreate, req.body);
-    await User.create({ ...values, password: await  BcryptUtil.hash(values.password)});
+    await User.create({ ...values, password: await BcryptUtil.hash(values.password) });
     return res.redirect(`${APP_URL}/admin/users`);
   } catch (err) {
     if (req.session) {
       req.session.flash = {
-        ...(err as ValidationException).validations
+        ...(err as ValidationException).validations,
       };
-      return res.redirect(`${APP_URL}/admin/users/create`);
     }
+    return res.redirect(`${APP_URL}/admin/users/create`);
   }
-})
+});
 
 userRouter.post('/admin/users/update/:id', auth, hasRole('admin'), async (req, res) => {
   try {
@@ -60,11 +60,11 @@ userRouter.post('/admin/users/update/:id', auth, hasRole('admin'), async (req, r
     console.log(err);
     return res.redirect(`${APP_URL}/admin/users`);
   }
-})
+});
 
 userRouter.post('/admin/users/delete/:id', auth, hasRole('admin'), async (req, res) => {
   await User.destroy({ where: { id: req.params.id } });
   return res.redirect(`${APP_URL}/admin/users`);
-})
+});
 
 export default userRouter;

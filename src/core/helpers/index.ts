@@ -9,8 +9,8 @@ const registerHelpers = () => {
   hbs.registerHelper('url', urlHelper);
   hbs.registerHelper('concat', concatHelper);
   hbs.registerHelper('isEqual', isEqualHelper);
-}
+};
 
 export default {
   registerHelpers,
-}
+};
