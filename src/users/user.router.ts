@@ -6,6 +6,7 @@ import UserSchemas from './user.schema';
 import Validator from '../core/validator';
 import { ValidationException } from '../errors/validation.exception';
 import hasRole from '../auth/has-role.middleware';
+import logger from '../core/logger.util';
 
 const userRouter = express.Router();
 const { APP_URL } = process.env;
@@ -57,7 +58,7 @@ userRouter.post('/admin/users/update/:id', auth, hasRole('admin'), async (req, r
     await User.update(body, { where: { id: req.params.id } });
     return res.redirect(`${APP_URL}/admin/users`);
   } catch (err) {
-    console.log(err);
+    logger.error(err);
     return res.redirect(`${APP_URL}/admin/users`);
   }
 });

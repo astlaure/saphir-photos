@@ -6,6 +6,7 @@ import upload from './photo.middleware';
 import auth from '../auth/auth.middleware';
 import hasRole from '../auth/has-role.middleware';
 import User from '../users/user.model';
+import logger from '../core/logger.util';
 
 const photoRouter = express.Router();
 const { APP_URL } = process.env;
@@ -27,8 +28,6 @@ photoRouter.post('/photos/likes', auth, async (req, res) => {
   try {
     const { id: userId } = (req.user as User);
     const { id, liked } = req.body;
-    console.log(id);
-    console.log(liked);
     await Photo.update({ liked }, { where: { userId, id } });
     return res.sendStatus(200);
   } catch (err) {
@@ -65,7 +64,7 @@ photoRouter.post('/admin/photos/delete/:id', auth, hasRole('admin'), async (req,
       await Photo.destroy({ where: { id: photo.id } });
     }
   } catch (err) {
-    console.log(err);
+    logger.error(err);
   }
 
   return res.redirect(`${APP_URL}/admin/users`);
