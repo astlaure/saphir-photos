@@ -1,7 +1,8 @@
 {
   "env": {
     "es2021": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "extends": [
     "airbnb-base"
@@ -17,7 +18,10 @@
   "ignorePatterns": [
     "./bin",
     "./public",
-    "./web"
+    "./web",
+    "jest.config.js",
+    "postcss.config.js",
+    "webpack.config.js"
   ],
   "rules": {
     "arrow-body-style": "off",

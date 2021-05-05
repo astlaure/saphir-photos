@@ -3,6 +3,7 @@ import { json, urlencoded } from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cookieSession from 'cookie-session';
 import csurf from 'csurf';
+import helmet from 'helmet';
 import security from './auth';
 import photoRouter from './photos/photo.router';
 import userRouter from './users/user.router';
@@ -22,6 +23,7 @@ app.set('views', 'web/views');
 
 helpers.registerHelpers();
 
+app.use(helmet());
 app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use(cookieParser());
