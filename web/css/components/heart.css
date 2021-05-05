@@ -1,0 +1,22 @@
+.heart {
+  height: 24px;
+  width: 28px;
+  background-color: transparent;
+  border: none;
+  margin: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  background-image: url("../../images/heart-white.svg");
+
+  &.selected {
+    background-image: url("../../images/heart-solid.svg");
+  }
+}
+
+.heart-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}

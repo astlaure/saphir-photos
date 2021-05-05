@@ -1,0 +1,49 @@
+.masonry {
+  display: flex;
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    > div {
+      padding-bottom: 16px;
+    }
+  }
+
+  .image {
+    position: relative;
+
+    &:hover {
+      .overlay {
+        opacity: 1;
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      height: calc(100% - 16px);
+      background: rgba(0, 0, 0, 0.2);
+      align-items: flex-end;
+      opacity: 0;
+      transition: opacity 250ms ease-in-out;
+
+      img {
+        height: 24px;
+        margin: 8px;
+      }
+    }
+  }
+}

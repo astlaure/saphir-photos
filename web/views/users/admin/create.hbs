@@ -1,0 +1,28 @@
+<div class="container main">
+  <h1 class="text-center mt-2 mb-2">Create Users</h1>
+  {{#each messages}}
+    <div class="alert">
+      <p>{{this}}</p>
+    </div>
+  {{/each}}
+  <div class="grid center">
+    <div class="col md-8 lg-6">
+      <form action="{{url '/admin/users/create'}}" method="post">
+        <input type="hidden" name="_csrf" value="{{ csrf }}">
+        <label for="name">
+          Name
+          <input type="text" name="name" id="name" value="{{originals.name}}">
+        </label>
+        <label for="username">
+          Username
+          <input type="text" name="username" id="username" value="{{originals.username}}">
+        </label>
+        <label for="password">
+          Password
+          <input type="password" name="password" id="password">
+        </label>
+        <input type="submit" class="btn primary w-75 center" value="create">
+      </form>
+    </div>
+  </div>
+</div>

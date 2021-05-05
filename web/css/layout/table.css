@@ -1,0 +1,33 @@
+table, thead, tbody, tr {
+  display: flex;
+  width: 100%;
+}
+
+td, th {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8px 0;
+
+  a, form {
+    padding: 0 8px;
+    width: auto;
+
+    input[type=submit] {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+  }
+}
+
+table, thead, tbody {
+  flex-direction: column;
+}
+
+tr {
+  border-bottom: 2px solid var(--cararra);
+}

@@ -1,0 +1,50 @@
+.navbar {
+  height: 64px;
+  border-bottom: 1px solid var(--dovegray);
+  display: flex;
+  align-items: center;
+
+  .container {
+    display: flex;
+    height: 100%;
+
+    .brand {
+      padding-left: 0;
+    }
+
+    .nav-menu {
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .brand {
+    height: 100%;
+    padding: 8px 32px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .nav-menu {
+    padding: 0 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    a, input[type=submit] {
+      padding: 4px 16px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    input[type=submit] {
+      padding: 4px 16px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

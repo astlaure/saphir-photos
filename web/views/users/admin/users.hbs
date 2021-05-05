@@ -1,0 +1,29 @@
+<div class="container main">
+  <h1 class="text-center mt-2 mb-2">Admin</h1>
+  <a href="{{url '/admin/users/create'}}" class="btn primary w-25">Create</a>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.username}}</td>
+          <td>
+            <a href="{{url (concat '/admin/photos/' this.id)}}">Photos</a>
+            <a href="{{url (concat '/admin/users/update/' this.id)}}">Update</a>
+            <form action="{{url (concat '/admin/users/delete/' this.id)}}" method="post">
+              <input type="hidden" name="_csrf" value="{{csrf}}">
+              <input type="submit" value="Delete">
+            </form>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

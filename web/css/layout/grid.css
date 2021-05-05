@@ -1,0 +1,49 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  &.main {
+    min-height: calc(100vh - 72px - 64px);
+    overflow: auto;
+  }
+
+  .grid {
+    margin: 0 -16px;
+    width: auto;
+  }
+}
+
+.grid {
+  display: flex;
+  width: 100%;
+
+  &.center {
+    justify-content: center;
+  }
+
+  .col {
+    display: flex;
+    width: 100%;
+    padding: 0 16px;
+
+    &.md-6 {
+      @media screen and (min-width: 768px) {
+        width: calc(100% / 12 * 6);
+      }
+    }
+
+    &.md-8 {
+      @media screen and (min-width: 768px) {
+        width: calc(100% / 12 * 8);
+      }
+    }
+
+    &.lg-6 {
+      @media screen and (min-width: 1024px) {
+        width: calc(100% / 12 * 6);
+      }
+    }
+  }
+}

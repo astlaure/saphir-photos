@@ -1,0 +1,43 @@
+<div class="container main">
+  <div class="mt-3 masonry">
+    <div class="col">
+      {{#each (modulo photos 3 0)}}
+        <div class="image">
+          <img src="{{url this.url}}" alt="photo">
+          <div class="overlay">
+            <button type="button" class="heart {{#if this.liked }}selected{{/if}}" onclick="toggleLike(this, {{this.id}})"></button>
+            <a href="{{url this.url}}" download>
+              <img src="{{url '/images/file-upload-solid.svg'}}" alt="download">
+            </a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <div class="col">
+      {{#each (modulo photos 3 1)}}
+        <div class="image">
+          <img src="{{url this.url}}" alt="photo">
+          <div class="overlay">
+            <button type="button" class="heart {{#if this.liked }}selected{{/if}}" onclick="toggleLike(this, {{this.id}})"></button>
+            <a href="{{url this.url}}" download>
+              <img src="{{url '/images/file-upload-solid.svg'}}" alt="download">
+            </a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <div class="col">
+      {{#each (modulo photos 3 2)}}
+        <div class="image">
+          <img src="{{url this.url}}" alt="photo">
+          <div class="overlay">
+            <button type="button" class="heart {{#if this.liked }}selected{{/if}}" onclick="toggleLike(this, {{this.id}})"></button>
+            <a href="{{url this.url}}" download>
+              <img src="{{url '/images/file-upload-solid.svg'}}" alt="download">
+            </a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

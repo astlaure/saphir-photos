@@ -1,0 +1,9 @@
+footer {
+  background-color: var(--mineshaft);
+  color: white;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+}

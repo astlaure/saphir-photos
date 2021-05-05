@@ -1,0 +1,25 @@
+form {
+  width: 100%;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    input {
+      display: block;
+      width: 100%;
+    }
+
+    &.inline {
+      flex-direction: row;
+      align-items: center;
+
+      input {
+        display: inline;
+        width: auto;
+        margin-right: var(--margin-8);
+      }
+    }
+  }
+}

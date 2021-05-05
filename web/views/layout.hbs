@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="csrf" content="{{csrf}}">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{url '/css/style.css'}}">
+  <link rel="shortcut icon" href="{{url '/favicon.png'}}" type="image/png">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="brand">
+      <img src="{{url '/images/logo.png'}}" alt="Saphir">
+    </div>
+    <ul class="nav-menu">
+      {{#if isAuthenticated}}
+        <li><a href="{{url '/photos'}}">Photos</a></li>
+      {{/if}}
+    </ul>
+    <ul class="nav-menu ml-auto">
+      {{#if isAuthenticated}}
+        {{#if (isEqual role 'admin')}}
+          <li><a href="{{url '/admin/users'}}">Admin</a></li>
+        {{/if}}
+        <li>
+          <form action="{{url '/logout'}}" method="post">
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <input type="submit" value="Logout">
+          </form>
+        </li>
+      {{else}}
+        <li><a href="{{url '/login'}}">Login</a></li>
+      {{/if}}
+    </ul>
+  </div>
+</nav>
+
+{{{ body }}}
+
+<footer>
+  <p>Saphir Design</p>
+</footer>
+
+<script src="{{url '/js/main.js'}}"></script>
+</body>
+</html>

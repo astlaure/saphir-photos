@@ -1,0 +1,13 @@
+.idea
+.vscode
+
+bin
+coverage
+logs
+node_modules
+public/css
+public/js
+/uploads/*
+!/uploads/.gitkeep
+
+.env

@@ -1,0 +1,23 @@
+<div class="container main">
+  <h1 class="text-center mt-2 mb-2">Login</h1>
+  <div class="grid center">
+    <div class="col md-6">
+      <form action="{{url '/login'}}" method="post">
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+        <label for="username">
+          Username
+          <input type="email" name="username" id="username">
+        </label>
+        <label for="password">
+          Password
+          <input type="password" name="password" id="password">
+        </label>
+        <label for="remember_me" class="inline">
+          <input type="checkbox" name="remember_me" id="remember_me">
+          Remember Me
+        </label>
+        <input type="submit" class="btn primary center w-75" value="login">
+      </form>
+    </div>
+  </div>
+</div>
