@@ -1,14 +1,14 @@
 <div class="container main">
-  <h1 class="text-center mt-2 mb-2">Manage Photos</h1>
+  <h1 class="text-center mt-2 mb-2">{{t 'photos.admin.title'}}</h1>
   <div class="grid center">
     <div class="col md-6">
       <form action="{{url (concat '/admin/photos/create?_csrf=' csrf)}}" method="post" enctype="multipart/form-data">
         <input type="hidden" name="user" value="{{id}}">
         <label for="photos">
-          Photos
+            {{t 'photos.admin.photos'}}
           <input type="file" name="photos" id="photos" multiple>
         </label>
-        <input type="submit" class="btn primary center w-100" value="Save">
+        <input type="submit" class="btn primary center w-100" value="{{t 'photos.admin.submit'}}">
       </form>
     </div>
   </div>
@@ -24,7 +24,7 @@
           <div>
             <form action="{{url (concat '/admin/photos/delete/' this.id)}}" method="post">
               <input type="hidden" name="_csrf" value="{{../csrf}}">
-              <input type="submit" class="btn primary w-100" value="Delete">
+              <input type="submit" class="btn primary w-100" value="{{t 'photos.admin.delete'}}">
             </form>
           </div>
         </div>
@@ -40,7 +40,7 @@
           <div>
             <form action="{{url (concat '/admin/photos/delete/' this.id)}}" method="post">
               <input type="hidden" name="_csrf" value="{{../csrf}}">
-              <input type="submit" class="btn primary w-100" value="Delete">
+              <input type="submit" class="btn primary w-100" value="{{t 'photos.admin.delete'}}">
             </form>
           </div>
         </div>
@@ -56,7 +56,7 @@
           <div>
             <form action="{{url (concat '/admin/photos/delete/' this.id)}}" method="post">
               <input type="hidden" name="_csrf" value="{{../csrf}}">
-              <input type="submit" class="btn primary w-100" value="Delete">
+              <input type="submit" class="btn primary w-100" value="{{t 'photos.admin.delete'}}">
             </form>
           </div>
         </div>

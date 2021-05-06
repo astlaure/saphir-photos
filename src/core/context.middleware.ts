@@ -5,6 +5,7 @@ const context = (req: Request, res: Response, next: NextFunction) => {
   res.locals.csrf = req.csrfToken();
   res.locals.isAuthenticated = req.isAuthenticated();
   res.locals.role = (req.user as User | null)?.role ?? 'anonymous';
+  res.locals.lang = req.i18n.language;
 
   if (req.session?.flash) {
     res.locals = {

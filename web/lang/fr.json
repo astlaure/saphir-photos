@@ -1,0 +1,56 @@
+{
+  "validation": {
+    "required": "Ce champs est requis.",
+    "empty": "Ce champs ne peut pas etre vide."
+  },
+  "login": {
+    "title": "Connexion",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "remember": "Souviens toi",
+    "submit": "Connexion"
+  },
+  "errors": {
+    "notfound": {
+      "title": "404 Cette page n'est pas celle que vous cherchez."
+    },
+    "technical": {
+      "title": "500 Vous ne devriez pas etre ici."
+    }
+  },
+  "photos": {
+    "admin": {
+      "title": "Gestion de photos",
+      "photos": "Photos",
+      "submit": "Sauvegarder",
+      "delete": "Effacer"
+    }
+  },
+  "users": {
+    "create": {
+      "title": "Creation d'utilisateurs",
+      "create": "Cree"
+    },
+    "update": {
+      "title": "Modification d'utilisateurs",
+      "update": "Modifier"
+    },
+    "title": "Admin",
+    "name": "Nom",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "actions": "Actions",
+    "btn": {
+      "create": "Cree",
+      "update": "Modifier",
+      "photos": "Photos",
+      "delete": "Effacer"
+    }
+  },
+  "navbar": {
+    "photos": "Photos",
+    "admin": "Admin",
+    "login": "Connexion",
+    "logout": "Deconnexion"
+  }
+}

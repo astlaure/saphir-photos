@@ -1,8 +1,8 @@
 <div class="container main">
-  <h1 class="text-center mt-2 mb-2">Update User</h1>
+  <h1 class="text-center mt-2 mb-2">{{t 'users.update.title'}}</h1>
   {{#each messages}}
     <div class="alert">
-      <p>{{this}}</p>
+      <p>{{t this}}</p>
     </div>
   {{/each}}
   <div class="grid center">
@@ -11,19 +11,19 @@
         <input type="hidden" name="_csrf" value="{{ csrf }}">
         {{#with user}}
           <label for="name">
-            Name
+            {{t 'users.name'}}
             <input type="text" name="name" id="name" value="{{name}}">
           </label>
           <label for="username">
-            Username
+            {{t 'users.username'}}
             <input type="text" name="username" id="username" value="{{username}}">
           </label>
           <label for="password">
-            Password
+            {{t 'users.password'}}
             <input type="password" name="password" id="password">
           </label>
         {{/with}}
-        <input type="submit" class="btn primary center w-75" value="update">
+        <input type="submit" class="btn primary center w-75" value="{{t 'users.update.update'}}">
       </form>
     </div>
   </div>

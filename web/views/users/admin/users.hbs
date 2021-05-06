@@ -1,12 +1,12 @@
 <div class="container main">
-  <h1 class="text-center mt-2 mb-2">Admin</h1>
-  <a href="{{url '/admin/users/create'}}" class="btn primary w-25">Create</a>
+  <h1 class="text-center mt-2 mb-2">{{t 'users.title'}}</h1>
+  <a href="{{url '/admin/users/create'}}" class="btn primary w-25">{{t 'users.btn.create'}}</a>
   <table>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Username</th>
-        <th>Actions</th>
+        <th>{{t 'users.name'}}</th>
+        <th>{{t 'users.username'}}</th>
+        <th>{{t 'users.actions'}}</th>
       </tr>
     </thead>
     <tbody>
@@ -15,11 +15,11 @@
           <td>{{this.name}}</td>
           <td>{{this.username}}</td>
           <td>
-            <a href="{{url (concat '/admin/photos/' this.id)}}">Photos</a>
-            <a href="{{url (concat '/admin/users/update/' this.id)}}">Update</a>
+            <a href="{{url (concat '/admin/photos/' this.id)}}">{{t 'users.btn.photos'}}</a>
+            <a href="{{url (concat '/admin/users/update/' this.id)}}">{{t 'users.btn.update'}}</a>
             <form action="{{url (concat '/admin/users/delete/' this.id)}}" method="post">
               <input type="hidden" name="_csrf" value="{{csrf}}">
-              <input type="submit" value="Delete">
+              <input type="submit" value="{{t 'users.btn.delete'}}">
             </form>
           </td>
         </tr>

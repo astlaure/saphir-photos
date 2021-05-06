@@ -1,8 +1,8 @@
 <div class="container main">
-  <h1 class="text-center mt-2 mb-2">Create Users</h1>
+  <h1 class="text-center mt-2 mb-2">{{t 'users.create.title'}}</h1>
   {{#each messages}}
     <div class="alert">
-      <p>{{this}}</p>
+      <p>{{t this}}</p>
     </div>
   {{/each}}
   <div class="grid center">
@@ -10,18 +10,18 @@
       <form action="{{url '/admin/users/create'}}" method="post">
         <input type="hidden" name="_csrf" value="{{ csrf }}">
         <label for="name">
-          Name
+          {{t 'users.name'}}
           <input type="text" name="name" id="name" value="{{originals.name}}">
         </label>
         <label for="username">
-          Username
+          {{t 'users.username'}}
           <input type="text" name="username" id="username" value="{{originals.username}}">
         </label>
         <label for="password">
-          Password
+          {{t 'users.password'}}
           <input type="password" name="password" id="password">
         </label>
-        <input type="submit" class="btn primary w-75 center" value="create">
+        <input type="submit" class="btn primary w-75 center" value="{{t 'users.create.create'}}">
       </form>
     </div>
   </div>

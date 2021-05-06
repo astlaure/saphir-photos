@@ -1,22 +1,22 @@
 <div class="container main">
-  <h1 class="text-center mt-2 mb-2">Login</h1>
+  <h1 class="text-center mt-2 mb-2">{{t 'login.title'}}</h1>
   <div class="grid center">
     <div class="col md-6">
       <form action="{{url '/login'}}" method="post">
         <input type="hidden" name="_csrf" value="{{csrf}}">
         <label for="username">
-          Username
+          {{t 'login.username'}}
           <input type="email" name="username" id="username">
         </label>
         <label for="password">
-          Password
+          {{t 'login.password'}}
           <input type="password" name="password" id="password">
         </label>
         <label for="remember_me" class="inline">
           <input type="checkbox" name="remember_me" id="remember_me">
-          Remember Me
+          {{t 'login.remember'}}
         </label>
-        <input type="submit" class="btn primary center w-75" value="login">
+        <input type="submit" class="btn primary center w-75" value="{{t 'login.submit'}}">
       </form>
     </div>
   </div>

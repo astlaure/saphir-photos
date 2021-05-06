@@ -1,0 +1,56 @@
+{
+  "validation": {
+    "required": "This field is required.",
+    "empty": "This field cannot be empty."
+  },
+  "login": {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "remember": "Remember Me",
+    "submit": "Login"
+  },
+  "errors": {
+    "notfound": {
+      "title": "404 That page is not the one your are looking for."
+    },
+    "technical": {
+      "title": "500 You should not be here."
+    }
+  },
+  "photos": {
+    "admin": {
+      "title": "Manage Photos",
+      "photos": "Photos",
+      "submit": "Save",
+      "delete": "Delete"
+    }
+  },
+  "users": {
+    "create": {
+      "title": "Create Users",
+      "create": "Create"
+    },
+    "update": {
+      "title": "Modify Users",
+      "update": "Update"
+    },
+    "title": "Admin",
+    "name": "Name",
+    "username": "Username",
+    "password": "Password",
+    "actions": "Actions",
+    "btn": {
+      "create": "Create",
+      "update": "Update",
+      "photos": "Photos",
+      "delete": "Delete"
+    }
+  },
+  "navbar": {
+    "photos": "Photos",
+    "admin": "Admin",
+    "login": "Login",
+    "logout": "Logout"
+  }
+}

@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{lang}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="csrf" content="{{csrf}}">
-  <title>Document</title>
+  <title>Saphir Photos</title>
   <link rel="stylesheet" href="{{url '/css/style.css'}}">
   <link rel="shortcut icon" href="{{url '/favicon.png'}}" type="image/png">
 </head>
@@ -19,23 +19,25 @@
     </div>
     <ul class="nav-menu">
       {{#if isAuthenticated}}
-        <li><a href="{{url '/photos'}}">Photos</a></li>
+        <li><a href="{{url '/photos'}}">{{t 'navbar.photos'}}</a></li>
       {{/if}}
     </ul>
     <ul class="nav-menu ml-auto">
       {{#if isAuthenticated}}
         {{#if (isEqual role 'admin')}}
-          <li><a href="{{url '/admin/users'}}">Admin</a></li>
+          <li><a href="{{url '/admin/users'}}">{{t 'navbar.admin'}}</a></li>
         {{/if}}
         <li>
           <form action="{{url '/logout'}}" method="post">
             <input type="hidden" name="_csrf" value="{{csrf}}">
-            <input type="submit" value="Logout">
+            <input type="submit" value="{{t 'navbar.logout'}}">
           </form>
         </li>
       {{else}}
-        <li><a href="{{url '/login'}}">Login</a></li>
+        <li><a href="{{url '/login'}}">{{t 'navbar.login'}}</a></li>
       {{/if}}
+      <li><a href="{{url '/language/en'}}">English</a></li>
+      <li><a href="{{url '/language/fr'}}">Francais</a></li>
     </ul>
   </div>
 </nav>
